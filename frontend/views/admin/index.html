@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+
+
+	<link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
+
+	
+
+	<base href = "/admin/">
+</head>
+<body ng-app="radio">
+
+	<div class = "navigation">
+		<a href = "banners">Banners</a>
+		<a href = "shows">Shows</a>
+		<a href = "residents">Residents</a>
+		<a href = "events">Events</a>
+		<a href = "schedule">Schedule</a>
+	</div>
+
+<div ng-view></div>
+
+
+
+
+</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+	<script src = "js/routing.js"></script>
+	<script src = "js/controllers.js"></script>
+
+
+</html>

@@ -1,0 +1,17 @@
+<div class = "rowlist">
+
+	<div class = "item"
+	 ng-repeat = "resident in residents"
+	 ng-click="select_relation(resident.resident_id)"
+	 onclick="$(this.parentNode.parentNode.parentNode).fadeOut();">
+		{{resident.name}}
+	</div>
+
+
+	<div class = "item" ng-if="residents.length == 0">
+		No residents added
+	</div>
+
+	
+
+</div>

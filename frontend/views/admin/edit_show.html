@@ -1,0 +1,59 @@
+<input type = "hidden" ng-model="edit_item['show_id']">
+
+<label>Show name</label>
+<input type = "text" ng-model="edit_item['name']">
+
+<label>Show description</label>
+<input type = "text" ng-model="edit_item['description']">
+
+<label>Show image - thumbnail</label>
+<img src = "/public/images/uploads/{{edit_item['image_thumbnail']}}">
+<input type = "submit" value = "Choose image" ng-click="choose_relation(edit_item, 'image_thumbnail', 'images')">
+
+<label>Show image - large</label>
+<img src = "/public/images/uploads/{{edit_item['image_banner']}}">
+<input type = "submit" value = "Choose image" ng-click="choose_relation(edit_item, 'image_banner', 'images')">
+
+
+
+<label>Show tags</label>
+<div ng-repeat="tag in edit_item['tags'] track by $index" class = "tag">
+	<input type = "text" placeholder = "Tags" ng-model="edit_item['tags'][$index]['tag']">
+	<div class = "remove_field" ng-click="edit_item['tags'].splice($index, 1)">-</div>
+</div>
+<button ng-click="more_fields(edit_item['tags'])">+</button>
+
+<label>Show tracks</label>
+<div ng-repeat="track in edit_item['tracks'] track by $index" class = "track">
+	<input type = "text" placeholder = "Artist" ng-model="track['artist']">
+	<input type = "text" placeholder = "Title" ng-model="track['title']">
+	<div class = "remove_field" ng-click="edit_item['tracks'].splice($index, 1)">-</div>
+</div>
+<button ng-click="more_fields(edit_item['tracks'])">+</button>
+
+
+<label>Show residents</label>
+
+<div ng-repeat="resident in edit_item['residents'] track by $index" class = "tag">
+	<div>Resident id: {{resident.resident_id}}</div>
+	<div class = "remove_field" ng-click="edit_item['residents'].splice($index, 1)">-</div>
+</div>
+<input type = "submit" value = "Add a resident" ng-click="choose_relation(edit_item, 'residents', 'residents')">
+
+
+
+
+
+<label>Show featured</label>
+<input type = "checkbox" ng-model="edit_item['featured']" ng-checked="edit_item['featured']" ng-init="edit_item['featured'] = false">
+
+<label>Show stream url</label>
+<input type = "text" ng-model="edit_item['stream']">
+
+
+<label>Show webpath</label>
+<input type = "text" ng-model="edit_item['webpath']">
+
+<input type = "submit" value = "Update" ng-click="update()">
+
+<input type = "submit" value = "Delete" ng-click="delete()" class="delete">

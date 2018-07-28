@@ -1,0 +1,55 @@
+<label>Show name</label>
+<input type = "text" ng-model="add_item['name']">
+
+<label>Show description</label>
+<input type = "text" ng-model="add_item['description']">
+
+<label>Show image - thumbnail</label>
+<img src = "/public/images/uploads/{{add_item['image_thumbnail']}}">
+<input type = "submit" value = "Choose image" ng-click="choose_relation(add_item, 'image_thumbnail', 'images')">
+
+<label>Show image - large</label>
+<img src = "/public/images/uploads/{{add_item['image_banner']}}">
+<input type = "submit" value = "Choose image" ng-click="choose_relation(add_item, 'image_banner', 'images')">
+
+<label>Show tags</label>
+<div ng-repeat="tag in add_item['tags'] track by $index" class = "tag">
+	<input type = "text" placeholder = "Tag" ng-model="add_item['tags'][$index]['tag']">
+	<div class = "remove_field" ng-click="add_item['tags'].splice($index, 1)">-</div>
+</div>
+<button ng-click="more_fields(add_item['tags'])">+</button>
+
+<label>Show tracks</label>
+<div ng-repeat="track in add_item['tracks'] track by $index" class = "track">
+	<input type = "text" placeholder = "Artist" ng-model="track['artist']">
+	<input type = "text" placeholder = "Title" ng-model="track['title']">
+	<div class = "remove_field" ng-click="add_item['tracks'].splice($index, 1)">-</div>
+</div>
+<button ng-click="more_fields(add_item['tracks'])">+</button>
+
+
+<label>Show residents</label>
+
+<div ng-repeat="resident in add_item['residents'] track by $index" class = "tag">
+	<div>Resident id: {{resident.resident_id}}</div>
+	<div class = "remove_field" ng-click="add_item['residents'].splice($index, 1)">-</div>
+</div>
+<input type = "submit" value = "Add a resident" ng-click="choose_relation(add_item, 'residents', 'residents')">
+
+
+
+
+
+
+<label>Show featured</label>
+<input type = "checkbox" ng-model="add_item['featured']" ng-checked="add_item['featured']" ng-init="add_item['featured'] = false">
+
+<label>Show stream url</label>
+<input type = "text" ng-model="add_item['stream']" placeholder="https://www.mixcloud.com/internetpublicradio/lujiachi-w-ao-wu-3rd-may-2018/">
+
+
+<label>Show webpath</label>
+<input type = "text" ng-model="add_item['webpath']">
+
+
+<input type = "submit" value = "Save" ng-click="save()">
