@@ -1,0 +1,44 @@
+
+
+<div ng-controller = "individual_show">
+	<div id = "banner" class="fixed-item">
+		<img src = "public/images/uploads/{{items.image_banner}}">
+	</div>
+
+
+	<!-- episode description start here -->
+	<div class="sticky">
+		<div class="episode-bio">
+			<h1>
+				{{items.name}}
+			</h1>
+			<div ng-if="items.date">
+				<h2 style="border-bottom: 2px solid #000;">
+					Next playing {{items.date}}
+				</h2>
+			</div>
+			<h3>
+				{{items.description}}
+			</h3>
+
+			<h2 class="episode-genres">
+				<a class="episode-genre-buttons" href="/tags/{{tag.tag}}" ng-repeat = "tag in items.tags">{{tag.tag}}</a>
+			</h2>
+		</div>
+
+
+		<!-- tracklist description start here -->		
+		<div class="episode-tracklist" ng-if="items.tracks.length > 0">
+			<h2>
+				tracklist
+			</h2>
+
+			<ul class="episode-tracks">
+				<li class="show" ng-repeat= "track in items.tracks">
+					{{track.title}} - {{track.artist}}
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+</div>

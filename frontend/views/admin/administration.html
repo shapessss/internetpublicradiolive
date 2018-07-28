@@ -1,0 +1,40 @@
+<div ng-controller="administration">
+	<h1>{{item_type}}</h1>
+	<div class = "leftcol">
+		<div class = "listing">
+			<div class = "item new" onclick="$('.add').fadeIn();$('.edit').fadeOut();">+</div>
+
+
+			<div class = "item" ng-repeat = "item in items" onclick="editItem(this)" ng-click="loadEditForm(item, $index)">
+				{{item.name}}
+			</div>
+
+		</div>
+	</div>
+
+	<div class = "form">
+
+		<div ng-include="edit_template" class="edit"></div>
+		<div ng-include="add_template" class="add"></div>
+
+	</div>
+
+
+	<div class = "lightbox">
+		<div ng-include="image_template" id = "lightbox-images"></div> 
+		<div ng-include="resident_template" id = "lightbox-residents"></div>
+		<div ng-include="show_template" id = "lightbox-shows"></div>
+
+
+		<div class = "close_window" onclick="$(this.parentNode).fadeOut('fast');"></div>
+	</div>
+
+
+	<div id = "message">
+		
+
+		
+	</div>
+
+
+</div>

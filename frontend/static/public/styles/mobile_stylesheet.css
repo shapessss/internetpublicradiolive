@@ -1,0 +1,169 @@
+@media all and (max-width: 750px) {
+#banner {
+	height:auto;
+}
+.banner_image {
+	display:block;
+	position: relative;
+	height:auto;
+}
+
+
+#banner .about {
+	
+}
+
+#banner .description-carousel {
+	top: auto;
+    bottom: 0;
+}
+
+#banner #banner_navigation {
+	display: none;
+}
+
+
+#navigation {height:auto;}
+
+#navigation .item {width:100%;}
+
+
+#mobile_navigation {
+	display:block;
+	height:60px;
+}
+
+#logo {display:none;}
+
+#mobile_navigation #mobile_logo {
+	height:100%;
+	width:auto; /* width and height will be 60px (nav is 60 tall) */
+}
+
+#mobile_navigation .dropdown {
+	height: 60px;
+    width: 60px;
+    right: 0;
+    top: 0;
+    position: absolute;
+    line-height: 60px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#pause_play, #now_playing, .navigation-inner, .navigation-inner .search, .navigation-inner .fa-search {
+	display:none;
+}
+
+#mobile_navigation .search, #navigation .navigation-inner .social-icons {
+	position: absolute;
+	left:80px;
+	bottom:10px;
+    height: 15px;
+  
+    width: calc(100% - 180px);
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    text-indent: 15px;
+    font-family: 'okomitomedium';
+
+}
+
+#mobile_navigation .fa-search {
+	position: absolute;
+    left: calc(100% - 90px);
+    bottom: 10px;
+}
+
+
+
+#navigation .navigation-inner .social-icons {
+	position: absolute;
+    left: 65px;
+    bottom: 10px;
+    height: 15px;
+    width: calc(100% - 130px);
+    background-color: transparent;
+    border: 0;
+    
+    color: #fff;
+    margin:0;
+    font-family: 'okomitomedium';
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+#navigation .navigation-inner .social-icons .right-nav {
+	width:auto;
+	float:none;
+}
+
+#navigation .navigation-inner {
+	height:auto;
+	margin-bottom:20px;
+}
+
+/* -----------=== S C H E D U L E * P A G E ====------------ */
+
+
+
+
+th {
+    font-size: .8em;
+    font-weight: 500;
+}
+
+
+.schedule {
+    border-top: 2px solid #fff;
+    margin-left:0;
+    padding-right:20px;
+}
+
+.schedule table, .schedule tr , .schedule td, .schedule tbody {display: block}
+
+.schedule table {
+    padding: .8rem 20px;
+    font-size: 1.2em;
+    width:100%;
+
+}
+
+
+.schedule thead {
+    display:none;
+}
+
+
+.schedule td {
+    font-size: .85em;
+    width:100%;
+}
+
+.schedule a {
+    color:white;
+    text-decoration: underline;
+}
+
+.schedule a:hover {
+    color:red;
+}
+
+
+.schedule table th {
+    text-align: left;
+}
+
+
+
+#mixcloud {
+    height:150px;
+}
+
+#mixcloud iframe {height:100%;}
+
+}
+
+

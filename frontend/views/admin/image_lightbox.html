@@ -1,0 +1,23 @@
+<div class = "rowlist">
+
+
+	<div class = "item upload">
+		<form id = "image-form">
+			<label for="file-input">
+		        <img src="/public/images/main/plsu.png">
+		    </label>
+			<input id = "file-input" type = "file" name = "image">
+		</form>
+		<input id = "image-upload-form" type = "submit" value = "upload">
+	</div>
+
+	<div class = "item" ng-repeat = "image in images" ng-click="select_relation(image.image_id)" onclick="$(this.parentNode.parentNode.parentNode).fadeOut();">
+		<img src = "/public/images/uploads/{{image.image_id}}">
+	</div>
+
+
+	<div class = "item" ng-if="images.length == 0">
+		No images uploaded
+	</div>
+
+</div>
